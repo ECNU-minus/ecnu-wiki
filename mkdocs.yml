@@ -21,7 +21,7 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: deep purple #基调色
-      accent: red #强调色
+      accent: green #强调色
       toggle:
         icon: material/weather-night
         name: 夜间模式
@@ -37,14 +37,27 @@ theme:
     - navigation.top # 回到顶部
     - toc.follow # 边栏自动滚动
 
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true # 页脚添加创建时间与最后更新时间
+  - git-committers:
+      repository: BetterECNU/ecnu-wiki
+      branch: main # 页脚添加作者信息
+  - search # 启用搜索功能
+
 markdown_extensions: # markdown扩展插件
   - admonition # 启用注释语法扩展
+  - footnotes # 添加页脚引用
   - pymdownx.arithmatex: # 数学公式支持
       generic: true
   - pymdownx.caret # 下划线与上标
   - pymdownx.details # 启用注释语法扩展
   - pymdownx.mark # 强调
-  - pymdownx.superfences # 启用注释语法扩展
+  - pymdownx.superfences: # 启用注释语法扩展
+      custom_fences: # 添加 mermaid 流程图支持
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tilde # 删除线与下标
 
 extra_javascript: #js文件
