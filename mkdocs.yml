@@ -1,10 +1,10 @@
 # 以下为站点信息
 site_name: ECNU-WIKI
-site_url: https://BetterECNU.github.io/ecnu-wiki
+site_url: https://ECNU-minus.github.io/ecnu-wiki
 
 # 以下为仓库信息
-repo_url: https://github.com/BetterECNU/ecnu-wiki
-repo_name: BetterECNU/ecnu-wiki
+repo_url: https://github.com/ECNU-minus/ecnu-wiki
+repo_name: ECNU-minus/ecnu-wiki
 
 theme:
   language: zh
