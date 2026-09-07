@@ -31,6 +31,13 @@ coverage/
 venv/
 .venv/
 
+# ---- MkDocs / docs build output ----
+site/
+
+# ---- Agent / orchestration runtime state (do not commit) ----
+.agent-teams/
+.agents/
+
 # ---- OS generated / misc ----
 *~
 .Trash-*

@@ -1,0 +1,115 @@
+# ==============================================================================
+# ECNU-Wiki · 华东师范大学新生指南
+# MkDocs Material 站点配置（风格参考 awslabs.github.io/cdk-eks-blueprints，
+# 配色采用 Material 内建 indigo 蓝色系，观感接近参考站的默认 indigo）
+# ==============================================================================
+
+site_name: ECNU-Wiki · 华东师大新生指南
+site_url: https://ecnu-wiki.github.io/ecnu-wiki/
+site_description: 由华东师范大学学生自发维护的非官方新生入学指南 / 生存 Wiki
+site_author: ECNU-Wiki Contributors
+repo_url: https://github.com/ecnu-wiki/ecnu-wiki
+repo_name: ecnu-wiki
+edit_uri: blob/main/docs/
+
+# ---- 文档目录 ----
+docs_dir: docs
+
+# ---- 主题 ----
+theme:
+  name: material
+  language: zh
+  icon:
+    logo: material/school
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs          # 顶部 tab 标签导航（取代旧版 deprecated `tabs`）
+    - navigation.sections      # 侧边栏按顶级分节
+    - navigation.top           # 返回顶部按钮
+    - navigation.indexes       # 顶级索引页可作为分节封面
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: light-blue
+      toggle:
+        icon: material/weather-night
+        name: 切换到亮色模式
+  font:
+    text: Noto Sans SC
+    code: Roboto Mono
+
+# ---- 顶部导航结构（9 大分类 + 首页）----
+# 说明：采用「一级分类目录 + 各自 index」平铺结构，
+# 对应 cdk-eks-blueprints 的 Overview + 各章节形态。
+nav:
+  - 首页:
+      - 首页: index.md
+  - 入学前准备: preparation/index.md
+  - 报到与注册: registration/index.md
+  - 校区指南: campuses/index.md
+  - 校园生活: campus-life/index.md
+  - 学业相关: academics/index.md
+  - 毕业相关: graduation/index.md
+  - 实习 · 科研 · 竞赛 · 出国: career-research/index.md
+  - 实用工具: tools/index.md
+  - 常见问题 FAQ: faq/index.md
+  - 关于:
+      - 关于本站: about.md
+      - 如何贡献: contribute.md
+      - 免责声明与版权: disclaimer-license.md
+
+# ---- 扩展 ----
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
+# ---- 插件 ----
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+
+# ---- 版权 / 非官方说明 ----
+copyright: >-
+  <span style="color:var(--md-primary-fg-color)">ECNU-Wiki</span> ·
+  非官方学生项目，与华东师范大学及其官方机构无隶属关系 · 内容采用
+  <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hans">CC BY 4.0</a>
+  许可
