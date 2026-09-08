@@ -69,7 +69,11 @@ nav:
   - 报到与注册:
       - 报到与注册: registration/index.md
       - 进校、入住与校内交通: registration/move-in.md
-  - 校区指南: campuses/index.md
+  - 校区指南:
+      - 校区指南: campuses/index.md
+      - 闵行校区: campuses/minhang.md
+      - 中北校区: campuses/zhongbei.md
+      - 两校区往返交通: campuses/transport.md
   - 校园生活:
       - 校园生活: campus-life/index.md
       - 宿舍与用水: campus-life/dorm.md
@@ -134,6 +138,12 @@ plugins:
         - zh
         - en
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  # 页面底部「最后更新」时间：取每文件最后一次 git commit 日期
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: date
+      fallback_to_build_date: true   # 未提交的新页面回退为构建日期
+      timezone: Asia/Shanghai
 
 # ---- 版权 / 非官方说明 ----
 copyright: >-
