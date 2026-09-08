@@ -35,6 +35,7 @@ venv/
 site/
 
 # ---- Agent / orchestration runtime state (do not commit) ----
+.agent/
 .agent-teams/
 .agents/
 

@@ -44,6 +44,11 @@ title: ECNU-Wiki 首页
 - [ ] 熟悉 [校区指南](campuses/index.md) 中的校园地图与交通
 - [ ] 遇到问题先去 [常见问题 FAQ](faq/index.md) 看看
 
+另外，还有两个推荐资源，值得新生一读：
+
+- 《[提问的智慧](https://lug.ustc.edu.cn/wiki/doc/smart-questions/)》
+- 华东师大本科生院《学生手册》《学习指南》（[本科生院官网](https://bksy.ecnu.edu.cn/)）
+
 ---
 
 ## 关于本站

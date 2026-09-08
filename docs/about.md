@@ -21,6 +21,12 @@ title: 关于本站
 - [如何贡献](contribute.md)
 - [免责声明与版权](disclaimer-license.md)
 
+## 内容来源与致谢
+
+本站部分内容整理自社区手册 [ecnu-guide](https://github.com/wengsy150943/ecnu-guide)（Re.从零开始的ECNU本科之旅 · 高频问题解答）。原内容由 Nya桑、Erosion、23.5 gg、不是可莉、若则、菊某人、qq、wsy 等同学在腾讯文档协作维护，2026 年 7 月为第六次修订版本。
+
+迁入内容遵循原项目许可（CC BY 4.0），在此向原作者与贡献者致谢。
+
 ## 定位声明
 
 !!! warning "非官方项目"

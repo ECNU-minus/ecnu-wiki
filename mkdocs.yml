@@ -59,14 +59,37 @@ theme:
 nav:
   - 首页:
       - 首页: index.md
-  - 入学前准备: preparation/index.md
-  - 报到与注册: registration/index.md
+  - 入学前准备:
+      - 入学前准备: preparation/index.md
+      - 校历与放假安排: preparation/calendar.md
+      - 学校的银行卡: preparation/bank-card.md
+      - 户口迁移: preparation/hukou-transfer.md
+      - 团关系与档案转移: preparation/dangtuan-transfer.md
+      - 要跟着学校买被子吗: preparation/bedding.md
+  - 报到与注册:
+      - 报到与注册: registration/index.md
+      - 进校、入住与校内交通: registration/move-in.md
   - 校区指南: campuses/index.md
-  - 校园生活: campus-life/index.md
-  - 学业相关: academics/index.md
+  - 校园生活:
+      - 校园生活: campus-life/index.md
+      - 宿舍与用水: campus-life/dorm.md
+      - 食堂: campus-life/food.md
+      - 校园卡与校园宽带: campus-life/campus-card.md
+      - 生活费、兼职与贷款: campus-life/money.md
+      - 校园跑与体育打卡: campus-life/sports.md
+      - 就医：医保、校医院与附近医院: campus-life/medical.md
+  - 学业相关:
+      - 学业相关: academics/index.md
+      - 新生第一课与开学考: academics/freshman-exams.md
+      - 挂科与四六级: academics/gpa-fail.md
+      - 拔尖计划、强基计划与卓越学院: academics/elite-programs.md
+      - 转专业: academics/major-transfer.md
+      - 出勤：翘课与请假: academics/attendance.md
   - 毕业相关: graduation/index.md
   - 实习 · 科研 · 竞赛 · 出国: career-research/index.md
-  - 实用工具: tools/index.md
+  - 实用工具:
+      - 实用工具: tools/index.md
+      - IT 基础（统一身份认证 / 校园网 / 邮箱）: tools/it-basics.md
   - 常见问题 FAQ: faq/index.md
   - 关于:
       - 关于本站: about.md
@@ -77,6 +100,7 @@ nav:
 markdown_extensions:
   - toc:
       permalink: true
+      slugify: !!python/name:pymdownx.slugs.gfm
   - admonition
   - attr_list
   - def_list
@@ -92,6 +116,10 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tilde:
+      subscript: false
+  - pymdownx.caret:
+      superscript: false
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
