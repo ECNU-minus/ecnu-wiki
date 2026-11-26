@@ -1,0 +1,44 @@
+# ---- OS / Editors ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editors / IDEs ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Logs & temp ----
+*.log
+*.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Node / JS tooling (in case we later add tooling) ----
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# ---- Dependencies / env ----
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+
+# ---- MkDocs / docs build output ----
+site/
+
+# ---- Agent / orchestration runtime state (do not commit) ----
+.agent/
+.agent-teams/
+.agents/
+
+# ---- OS generated / misc ----
+*~
+.Trash-*

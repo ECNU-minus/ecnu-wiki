@@ -1,68 +1,153 @@
-# 以下为站点信息
-site_name: ECNU-WIKI
-site_url: https://ECNU-minus.github.io/ecnu-wiki
+# ==============================================================================
+# ECNU-Wiki · 华东师范大学新生指南
+# MkDocs Material 站点配置（风格参考 awslabs.github.io/cdk-eks-blueprints，
+# 配色采用 Material 内建 indigo 蓝色系，观感接近参考站的默认 indigo）
+# ==============================================================================
 
-# 以下为仓库信息
-repo_url: https://github.com/ECNU-minus/ecnu-wiki
-repo_name: ECNU-minus/ecnu-wiki
+site_name: ECNU-Wiki · 华东师大新生指南
+site_url: https://ecnu-wiki.github.io/ecnu-wiki/
+site_description: 由华东师范大学学生自发维护的非官方新生入学指南 / 生存 Wiki
+site_author: ECNU-Wiki Contributors
+repo_url: https://github.com/ecnu-wiki/ecnu-wiki
+repo_name: ecnu-wiki
+edit_uri: blob/main/docs/
 
+# ---- 文档目录 ----
+docs_dir: docs
+
+# ---- 主题 ----
 theme:
+  name: material
   language: zh
-  name: material # 设定主题为 material
-  custom_dir: overrides # 启用giscus评论需要此行
-  palette: #日夜模式切换
+  icon:
+    logo: material/school
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs          # 顶部 tab 标签导航（取代旧版 deprecated `tabs`）
+    - navigation.sections      # 侧边栏按顶级分节
+    - navigation.top           # 返回顶部按钮
+    - navigation.indexes       # 顶级索引页可作为分节封面
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple #基调色
-      accent: green #强调色
+      primary: indigo
+      accent: blue
       toggle:
         icon: material/weather-sunny
-        name: 日间模式
+        name: 切换到暗色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple #基调色
-      accent: green #强调色
+      primary: indigo
+      accent: light-blue
       toggle:
         icon: material/weather-night
-        name: 夜间模式
-  icon:
-    repo: fontawesome/brands/github # 设置git仓库图标
-  
-  features:
-    - content.code.copy # 启用代码块复制按钮，尽管我觉得用不上
-    - navigation.footer # 启用页尾上一页下一页按钮
-    - navigation.instant # 内部链接即时加载
-    - navigation.tabs # 页顶导航栏
-    - navigation.tabs.sticky # 粘性导航栏
-    - navigation.top # 回到顶部
-    - toc.follow # 边栏自动滚动
+        name: 切换到亮色模式
+  font:
+    text: Noto Sans SC
+    code: Roboto Mono
 
-plugins:
-  - git-revision-date-localized:
-      enable_creation_date: true # 页脚添加创建时间与最后更新时间
-  - git-committers:
-      repository: BetterECNU/ecnu-wiki
-      branch: main # 页脚添加作者信息
-  - search # 启用搜索功能
-
-markdown_extensions: # markdown扩展插件
-  - admonition # 启用注释语法扩展
-  - footnotes # 添加页脚引用
-  - pymdownx.arithmatex: # 数学公式支持
-      generic: true
-  - pymdownx.caret # 下划线与上标
-  - pymdownx.details # 启用注释语法扩展
-  - pymdownx.mark # 强调
-  - pymdownx.superfences: # 启用注释语法扩展
-      custom_fences: # 添加 mermaid 流程图支持
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tilde # 删除线与下标
-
-extra_javascript: #js文件
-  - javascripts/mathjax.js # 数学公式支持
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # 数学公式支持
-
+# ---- 顶部导航结构（9 大分类 + 首页）----
+# 说明：采用「一级分类目录 + 各自 index」平铺结构，
+# 对应 cdk-eks-blueprints 的 Overview + 各章节形态。
 nav:
-  - "index.md"
+  - 首页:
+      - 首页: index.md
+  - 入学前准备:
+      - 入学前准备: preparation/index.md
+      - 校历与放假安排: preparation/calendar.md
+      - 学校的银行卡: preparation/bank-card.md
+      - 户口迁移: preparation/hukou-transfer.md
+      - 团关系与档案转移: preparation/dangtuan-transfer.md
+      - 要跟着学校买被子吗: preparation/bedding.md
+  - 报到与注册:
+      - 报到与注册: registration/index.md
+      - 进校、入住与校内交通: registration/move-in.md
+  - 校区指南:
+      - 校区指南: campuses/index.md
+      - 闵行校区: campuses/minhang.md
+      - 中北校区: campuses/zhongbei.md
+      - 两校区往返交通: campuses/transport.md
+  - 校园生活:
+      - 校园生活: campus-life/index.md
+      - 宿舍与用水: campus-life/dorm.md
+      - 食堂: campus-life/food.md
+      - 校园卡与校园宽带: campus-life/campus-card.md
+      - 生活费、兼职与贷款: campus-life/money.md
+      - 校园跑与体育打卡: campus-life/sports.md
+      - 就医：医保、校医院与附近医院: campus-life/medical.md
+  - 学业相关:
+      - 学业相关: academics/index.md
+      - 新生第一课与开学考: academics/freshman-exams.md
+      - 挂科与四六级: academics/gpa-fail.md
+      - 拔尖计划、强基计划与卓越学院: academics/elite-programs.md
+      - 转专业: academics/major-transfer.md
+      - 出勤：翘课与请假: academics/attendance.md
+  - 毕业相关: graduation/index.md
+  - 实习 · 科研 · 竞赛 · 出国: career-research/index.md
+  - 实用工具:
+      - 实用工具: tools/index.md
+      - IT 基础（统一身份认证 / 校园网 / 邮箱）: tools/it-basics.md
+  - 常见问题 FAQ: faq/index.md
+  - 关于:
+      - 关于本站: about.md
+      - 如何贡献: contribute.md
+      - 免责声明与版权: disclaimer-license.md
+
+# ---- 扩展 ----
+markdown_extensions:
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.gfm
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde:
+      subscript: false
+  - pymdownx.caret:
+      superscript: false
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
+# ---- 插件 ----
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  # 页面底部「最后更新」时间：取每文件最后一次 git commit 日期
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: date
+      fallback_to_build_date: true   # 未提交的新页面回退为构建日期
+      timezone: Asia/Shanghai
+
+# ---- 版权 / 非官方说明 ----
+copyright: >-
+  <span style="color:var(--md-primary-fg-color)">ECNU-Wiki</span> ·
+  非官方学生项目，与华东师范大学及其官方机构无隶属关系 · 内容采用
+  <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hans">CC BY 4.0</a>
+  许可
